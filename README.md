@@ -1,33 +1,27 @@
-# 🚀 Terraform S3 Bucket Project (AWS)
+# Terraform S3 Bucket Project (AWS)
 
 This project demonstrates how to provision an Amazon S3 bucket in the ap-southeast-1 (Singapore) region using Terraform.
 Since S3 bucket names must be globally unique, this implementation automatically appends a random hexadecimal suffix to the bucket name to prevent naming conflicts during repeated deployments.
 
-## 🧱 What This Project Creates
+## What This Project Creates
 
 ✅ Amazon S3 Bucket
-firstproject-s3-bucket-<random-suffix>
+- firstproject-s3-bucket-<random-suffix>
 
 ## 📁 Project Overview
-providers.tf
+### providers.tf
 
-Defines the cloud provider (AWS)
+- Defines the cloud provider (AWS)
+- Locks Terraform version to ensure consistency:
+- Terraform ~> 1.7
+- Configures AWS region:
+- ap-southeast-1 (Singapore)
 
-Locks Terraform version to ensure consistency:
+### s3.tf
 
-Terraform ~> 1.7
-
-Configures AWS region:
-
-ap-southeast-1 (Singapore)
-
-## s3.tf
-
-Generates a unique suffix using the random_id resource
-
-Creates an S3 bucket with a globally unique name
-
-Outputs the final bucket name after deployment
+- Generates a unique suffix using the random_id resource
+- Creates an S3 bucket with a globally unique name
+- Outputs the final bucket name after deployment
 
 ## 🔄 Implementation Steps (Steps-by-steps)
 
@@ -71,7 +65,7 @@ Creates the S3 bucket in AWS.
 terraform apply
 ```
 
-## 📤Output :
+## Output :
 
 bucket_name = "firstproject-s3-bucket-<random_suffix>"
 
